@@ -6,7 +6,7 @@
     //using tools
     let rectTool = document.querySelector(".fa-square");
     let lineTool = document.querySelector(".fa-grip-lines-vertical");
-    let cTool = "rectTool";
+    let cTool = "rectTool   ";
     // //for boundary
     // tool.strokeStyle ="red"
     // tool.strokeRect(50,50,200,200);
@@ -23,6 +23,7 @@
     })
     
     let ix,iy,fx,fy; 
+    let border = canvasBoard.getBoundingClientRect();
     body.addEventListener("mousedown",function(e){
             ix =e.clientX;
             iy= e.clientY;
@@ -30,15 +31,21 @@
     body.addEventListener("mouseup",function(e){
             fx = e.clientX;
             fy = e.clientY;
+
             let width = fx-ix;
             let height = fy-iy;
+            let delX = border.left; //dis between body and canvas in x & y
+            let delY = border.top;
+            // correctness  
+            ix-=delX;iy-=delY;
+            fx-=delX;fy-=delY;
             if(cTool == "rectTool"){
-                tool.strokeRect(ix-12,iy-36,width,height);  
+                tool.strokeRect(ix,iy,width,height);  
             }
             else{
                 tool.beginPath();
-                tool.moveTo(ix-10,iy-37);
-                tool.lineTo(fx-10,fy-37);
+                tool.moveTo(ix,iy);
+                tool.lineTo(fx,fy);
                 tool.stroke();
 
             }
