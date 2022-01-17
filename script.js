@@ -1,11 +1,10 @@
     let canvasBoard = document.querySelector("canvas");
-    let body = document.querySelector("body");
-    canvasBoard.height = window.innerHeight;
+    canvasBoard.height = window.innerHeight ;
     canvasBoard.width = window.innerWidth;
     let tool = canvasBoard.getContext("2d");
     //using tools
-    let rectTool = document.querySelector(".fa-square");
-    let lineTool = document.querySelector(".fa-grip-lines-vertical");
+    // let rectTool = document.querySelector(".fa-square");
+    // let lineTool = document.querySelector(".fa-grip-lines-vertical");
     let cTool = "rectTool   ";
     // //for boundary
     // tool.strokeStyle ="red"
@@ -13,22 +12,22 @@
 
     // for filling area  change
     // tool.fillRect(50,50,100,100);
-    // tool.fillStyle ="green";
-    rectTool.addEventListener("click",function(){
-
+    // // tool.fillStyle ="green";
+    $(".fa-square").click(function(){
         cTool = "rectTool";
-    })
-    lineTool.addEventListener("click",function(){
-        cTool = "lineTool";     
-    })
-    
+    });
+    $(".fa-grip-lines-vertical").click(function(){
+        cTool = "lineTool";
+    });
+
     let ix,iy,fx,fy; 
     let border = canvasBoard.getBoundingClientRect();
-    body.addEventListener("mousedown",function(e){
-            ix =e.clientX;
-            iy= e.clientY;
-    })
-    body.addEventListener("mouseup",function(e){
+
+    $("body").mousedown(function(e){
+        ix = e.clientX;
+        iy = e.clientY;
+    });
+    $("body").mouseup(function(e){
             fx = e.clientX;
             fy = e.clientY;
 
@@ -49,6 +48,13 @@
                 tool.stroke();
 
             }
-    })
-    
-    
+    });
+    $(".red").click(function(){
+        tool.strokeStyle ="red";
+    });
+    $(".green").click(function(){
+        tool.strokeStyle ="green";
+    });
+    $(".blue").click(function(){
+        tool.strokeStyle = "blue";
+    });
