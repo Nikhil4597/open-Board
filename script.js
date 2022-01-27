@@ -172,6 +172,29 @@
     $(".black").click(function(){
         tool.strokeStyle = "#343434";
     })
+    $(".white").click(function(){
+        tool.strokeStyle = "#F0FFFF";
+    })
+    $(".yellow").click(function(){
+        tool.strokeStyle = "#FFC300 ";
+    })
+    // ----------------------toogle effect -------------------
+    let toogle =1;
+    $(".pad-color").click(function(){
+        if(toogle %2!=0){
+        $(this).css("background-color","#F0FFFF");
+        $("body").css("background-color","#28282B");
+        $(".toolbar").css("background-color","#28282B");
+        toogle++;
+    }
+    else{
+        $(this).css("background-color","#28282B");
+        $("body").css("background-color","#F0FFFF");
+        $(".toolbar").css("background-color","#F0FFFF");
+        toogle++;
+    }
+
+    })
     
 
      
