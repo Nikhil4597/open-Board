@@ -48,6 +48,9 @@ canvas{
 .blue{
     background-color: #4682b4 ;
 }
+.black{
+    background-color: #1B1212 ;
+}
 .size-box{
    
     width: 150px;
@@ -56,7 +59,8 @@ canvas{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* display: none; */
+    display: none;
+    border-radius: 4px;
 }
 .size{
     background-color: gray;
