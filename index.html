@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./style.css">
     <!-- jquery cdn link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- cdn link for html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <body>
     <div class="toolbar">
@@ -58,6 +61,14 @@
         <div class="tool all-clear">
             <img src="./NewIcons/CloseButton.svg" alt="" class="tool-img">
         </div>
+        <div class="tool text">
+            <img src="./NewIcons/text.svg" alt="" class="tool-img">
+            <div id="textdiv">
+                <textarea id = "textArea" cols="20" rows="4" autofocus>
+                    
+            </textarea></div>
+                 
+        </div>
         
         <div class="tool"></div>
         <div class="color-container">
@@ -72,7 +83,14 @@
         </div>
     </div>
     <!-- is used for drawing  -->
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas">
+        <div id="textdiv">
+            <textarea id = "textArea" cols="20" rows="4" autofocus>
+                
+        </textarea></div>
+    </canvas>
 </body>
 <script src="./script.js"></script>
+<script src="./moveableText.js"></script>
+ 
 </html> 

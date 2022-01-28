@@ -117,12 +117,15 @@
                 tool.moveTo(fx,fy);
                 tool.lineTo(ix,iy);
                 tool.stroke();
+
+                 
             }
 
             else if(cTool == "erase"){
                 tool.globalCompositeOperation ="destination-out";
                 tool.arc(fx,fy,eraseSize,0,Math.PI*2,false);
                 tool.fill();
+                 
             }
             else{
                 return ;
@@ -144,33 +147,45 @@
     // --------------------------color change--------------------
     $(".red").click(function(){
         tool.strokeStyle = "#ff6347";
+        tool.fillStyle = "#ff6347";
         $(".size").css("background-color","#ff6347");
     });
 
     $(".blue").click(function(){
         tool.strokeStyle = "#4682b4";
+        tool.fillStyle = "#4682b4";
+
         $(".size").css("background-color","#4682b4");
 
     });
 
     $(".green").click(function(){
         tool.strokeStyle = "#32cd32";
+        tool.fillStyle = "#32cd32";
+
         $(".size").css("background-color","#32cd32");
 
     });
     $(".black").click(function(){
         tool.strokeStyle = "#343434";
+        tool.fillStyle = "#343434";
+
+        
         $(".size").css("background-color","#343434");
 
     })
     $(".white").click(function(){
         tool.strokeStyle = "#F0FFFF";
+        tool.fillStyle = "#F0FFFF";
+
         $(".size").css({"background-color":"#F0FFFF","border":"1px solid #343434"});
 
 
     })
     $(".yellow").click(function(){
         tool.strokeStyle = "#FFC300 ";
+        tool.fillStyle = "#FFC300 ";
+
         $(".size").css("background-color","#FFC300 ");
 
     })
@@ -223,5 +238,25 @@
         tool.clearRect(0,0,border.width,border.height); 
     });
 
-     
-  
+    // -------------------------add text------------------------------
+   let txt =1;
+    $(".text").click((e)=>{
+        if(txt%2!=0){
+        $("#textdiv").css("display","flex");
+        $("#textArea").val("");
+        $("#textArea").focus();
+        txt++;
+        }
+        else{
+        $("#textdiv").css("display","none");
+        tool.font = "bold 25px Arial"
+
+        let val = $("#textArea").val();
+        if(val!="" || val != " " || val != '\n'){
+        tool.fillText(val,e.clientX-delX,e.clientY-delY);
+        }
+        txt++;
+}
+
+        
+   });

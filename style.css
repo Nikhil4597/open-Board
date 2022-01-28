@@ -3,10 +3,7 @@ body{
     background-color: #F0FFFF ;
 }  
  
-canvas{
-     
-    width:100%;
-}
+
 .color{
     height: 35px;
     width: 35px;
@@ -116,3 +113,16 @@ canvas{
     width: 24px;
 }
  
+/* --------------------------moving tab----------------------- */
+#textdiv{
+    position: absolute;
+    top: 95px;
+    display: none;
+    border: 1px solid #4682b4
+}
+#textArea{
+     border: none;
+     outline: none;
+     padding: 1rem;
+
+}
