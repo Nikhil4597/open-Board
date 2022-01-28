@@ -1,8 +1,10 @@
 body{
     margin: 0 px;
-}   
+    background-color: #F0FFFF ;
+}  
+ 
 canvas{
-    /* border: 1px solid rgb(163, 160, 160); */
+     
     width:100%;
 }
 .color{
@@ -26,6 +28,7 @@ canvas{
         background-color: #1B1212;
         width: 35px;
         height: 35px;
+        border-radius: 4px ;
  }
 .tool-img{
     height: 35px;
@@ -95,3 +98,21 @@ canvas{
     height: 24px;
     width: 24px;
 }
+/* -----------------------eraser size------------------ */
+#erase1{
+    height: 10px;
+    width: 10px;
+}
+#erase2{
+    height: 17px;
+    width: 17px;
+}
+#erase3{
+    height: 20px;
+    width: 20px;
+}
+#erase4{
+    height: 24px;
+    width: 24px;
+}
+ 
